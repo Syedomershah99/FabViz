@@ -1,6 +1,8 @@
 # FabViz - Semiconductor Yield Analysis
 
-Interactive Streamlit dashboard for exploring the UCI SECOM semiconductor fabrication dataset (1,567 wafers, 591 sensor features). Built for yield classification, statistical process control, and process drift detection.
+Interactive Streamlit dashboard for exploring the UCI SECOM semiconductor fabrication dataset (1,567 wafers, 590 sensor features). Built for yield classification, statistical process control, and process drift detection.
+
+**Live Demo:** [fabviz.streamlit.app](https://fabviz.streamlit.app)
 
 ## Features
 
@@ -14,10 +16,18 @@ Interactive Streamlit dashboard for exploring the UCI SECOM semiconductor fabric
 
 ```bash
 pip install -r requirements.txt
+
+# macOS: XGBoost requires OpenMP
+brew install libomp
+
 streamlit run app.py
 ```
 
 The app automatically downloads the UCI SECOM dataset on first run.
+
+## Documentation
+
+See [docs/DOCUMENTATION.md](docs/DOCUMENTATION.md) for a detailed walkthrough of every component, all technical concepts explained in plain language, and the full data pipeline from raw sensor readings to interactive visualizations.
 
 ## Tech Stack
 
@@ -25,4 +35,4 @@ Python, Streamlit, Pandas, NumPy, Scikit-learn, XGBoost, Plotly, imbalanced-lear
 
 ## Dataset
 
-[UCI SECOM](https://archive.ics.uci.edu/dataset/179/secom) -- 1,567 wafers, 591 process sensor measurements, binary pass/fail labels (~93% pass, ~7% fail).
+[UCI SECOM](https://archive.ics.uci.edu/dataset/179/secom) -- 1,567 wafers, 590 process sensor measurements, binary pass/fail labels (~93% pass, ~7% fail).
