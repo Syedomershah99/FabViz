@@ -53,9 +53,9 @@ def train_and_evaluate(X: pd.DataFrame, y: pd.Series, model_name: str = "rf",
 
     metrics = {
         "accuracy": accuracy_score(y, y_pred),
-        "precision": precision_score(y, y_pred, zero_division=0),
-        "recall": recall_score(y, y_pred, zero_division=0),
-        "f1": f1_score(y, y_pred, zero_division=0),
+        "precision": precision_score(y, y_pred, average="weighted", zero_division=0),
+        "recall": recall_score(y, y_pred, average="weighted", zero_division=0),
+        "f1": f1_score(y, y_pred, average="weighted", zero_division=0),
         "roc_auc": roc_auc_score(y, y_prob),
     }
 
